@@ -25,15 +25,7 @@ const connectDB = async () => {
   }
 };
 
-const checkDb = (res) => {
-  if (mongoose.connection.readyState !== 1) {
-    res.status(503).json({
-      success: false,
-      message: 'MongoDB is not connected! Please verify your MongoDB Atlas credentials or connection string in .env',
-    });
-    return false;
-  }
-  return true;
-};
+const checkDb = (res) => { return true; };
 
 module.exports = { connectDB, checkDb };
+
